@@ -7,3 +7,6 @@ install:
 
 run:
 	.venv/bin/uvicorn app.main:app --reload
+
+seed:
+	.venv/bin/python scripts/seed_fake_data.py
