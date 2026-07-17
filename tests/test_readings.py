@@ -3,7 +3,7 @@ from app.main import app
 from app import database
 import pytest
 
-@pytest.fixture(autouse=True)
+@pytest.fixture()
 def client(tmp_path, monkeypatch: pytest.MonkeyPatch):
     test_db = tmp_path / "test.db"
     monkeypatch.setattr(database, "DB_PATH", str(test_db))
