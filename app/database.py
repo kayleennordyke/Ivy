@@ -8,6 +8,7 @@ def get_connection() -> sqlite3.Connection:
     return conn
 
 def init_db() -> None:
+    """Initialize the database."""
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
@@ -25,6 +26,7 @@ def init_db() -> None:
         conn.commit()
 
 def insert_reading(reading) -> sqlite3.Row:
+    """Insert a reading into the database."""
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
@@ -40,6 +42,7 @@ def insert_reading(reading) -> sqlite3.Row:
         return created_reading
 
 def fetch_readings() -> list[sqlite3.Row]:
+    """Fetch all readings from the database."""
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(
