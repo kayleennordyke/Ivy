@@ -27,6 +27,8 @@ def test_create_reading(client: TestClient) -> None:
     assert data["metric"] == "temperature"
     assert data["value"] == 22.5
     assert data["unit"] == "C"
+    assert "id" in data
+    assert "recorded_at" in data
 
 def test_list_readings(client: TestClient) -> None:
     """Test the GET /readings endpoint."""
