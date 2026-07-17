@@ -10,3 +10,6 @@ run:
 
 seed:
 	.venv/bin/python scripts/seed_fake_data.py
+
+test:
+	.venv/bin/pytest tests/test_readings.py

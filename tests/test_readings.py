@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 from app.main import app, readings
 import pytest
+
 client = TestClient(app)
 
 @pytest.fixture(autouse=True)
